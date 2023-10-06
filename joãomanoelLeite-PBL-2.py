@@ -26,7 +26,7 @@ def definirMatriz():
 
     # Inicializa a matriz de jogo 4x4 com zeros;
     matriz = [[0, 0, 0, 0],
-              [0, 1024, 1024, 0],
+              [0, 0, 0, 0],
               [0, 0, 0, 0],
               [0, 0, 0, 0]]
     
@@ -52,12 +52,9 @@ def definirMatriz():
 def exibirMatriz(matriz):
     # Comando para limpar a tela do terminal (funciona no Linux e no Windows);
     os.system('cls' if os.name == 'nt' else 'clear')
-
     # Exibe a pontuação e a matriz de jogo no terminal;
-    if contador_jogadas > 1:
-        print(f"Pontuação: {int(pontuacao/2)} | Jogadas: {contador_jogadas}\n")
-    else:
-        print(f"Pontuação: {pontuacao} | Jogadas: {contador_jogadas}\n")
+    print(f"Pontuação: {int(pontuacao/2)} | Jogadas: {contador_jogadas}\n")
+
     for linha in matriz:
         print("---------------------")
         print("|", end="")
@@ -213,16 +210,10 @@ Se você conseguiu vencer isso, justamente, você é um verdadeiro nerdola.
                 if pontuacao > melhor_pontuacao:
                     melhor_pontuacao = pontuacao
                     melhor_contador_jogadas = contador_jogadas
-                    if contador_jogadas > 1:
-                        print(f"É um novo recorde! de {int(melhor_pontuacao/2)} pontos com {contador_jogadas} jogadas!")
-                    else:
-                        print(f"É um novo recorde! de {melhor_pontuacao} pontos com {contador_jogadas} jogadas!")
+                    print(f"É um novo recorde! de {int(melhor_pontuacao/2)} pontos com {contador_jogadas} jogadas!")
                     flag_2 += 1
                 else:
-                    if contador_jogadas > 1:
-                        print(f"É um novo recorde! de {int(melhor_pontuacao/2)} pontos com {contador_jogadas} jogadas!")
-                    else:
-                        print(f"É um novo recorde! de {melhor_pontuacao} pontos com {contador_jogadas} jogadas!")
+                    print(f"É um novo recorde! de {int(melhor_pontuacao/2)} pontos com {contador_jogadas} jogadas!")
                     flag_2 += 1
 
             elif not verificarJogadas(matriz):
@@ -259,16 +250,10 @@ Se você conseguiu vencer isso, justamente, você é um verdadeiro nerdola.
                 if pontuacao > melhor_pontuacao:
                     melhor_pontuacao = pontuacao
                     melhor_contador_jogadas = contador_jogadas
-                    if contador_jogadas > 1:
-                        print(f"É um novo recorde! de {int(melhor_pontuacao/2)} pontos com {contador_jogadas} jogadas!")
-                    else:
-                        print(f"É um novo recorde! de {melhor_pontuacao} pontos com {contador_jogadas} jogadas!")
+                    print(f"É um novo recorde! de {int(melhor_pontuacao/2)} pontos com {contador_jogadas} jogadas!")
                     flag_2 += 1
                 else:
-                    if contador_jogadas > 1:
-                        print(f"É um novo recorde! de {int(melhor_pontuacao/2)} pontos com {contador_jogadas} jogadas!")
-                    else:
-                        print(f"É um novo recorde! de {melhor_pontuacao} pontos com {contador_jogadas} jogadas!")
+                    print(f"É um novo recorde! de {int(melhor_pontuacao/2)} pontos com {contador_jogadas} jogadas!")
                     flag_2 += 1
 
             if flag_2 == 0:
@@ -300,11 +285,8 @@ Se você conseguiu vencer isso, justamente, você é um verdadeiro nerdola.
             else:
                 print("Entrada inválida! Tente novamente")  
 
-    os.system('cls' if os.name == 'nt' else 'clear')  
-    if contador_jogadas > 1:
-        print(f"Maior pontuação atual: {int(melhor_pontuacao/2)} pontos | jogadas: {melhor_contador_jogadas}")
-    else:
-        print(f"Maior pontuação atual: {melhor_pontuacao} pontos | jogadas: {melhor_contador_jogadas}")
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(f"Maior pontuação atual: {int(melhor_pontuacao/2)} pontos | jogadas: {melhor_contador_jogadas}")
     print('''Obrigado por jogar!
 ░░░░░░░░░░░░░░░░░░░░░░█████████
 ░░███████░░░░░░░░░░███▒▒▒▒▒▒▒▒███
